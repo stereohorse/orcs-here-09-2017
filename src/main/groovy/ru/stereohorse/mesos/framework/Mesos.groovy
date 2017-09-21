@@ -4,7 +4,6 @@ import groovy.json.JsonSlurper
 import groovy.util.logging.Slf4j
 import okhttp3.*
 
-import static java.util.UUID.randomUUID
 import static java.util.concurrent.TimeUnit.MINUTES
 
 @Slf4j
@@ -59,7 +58,7 @@ class Mesos {
                             {
                               "name": "${task.name}",
                               "task_id": {
-                                "value": "${randomUUID()}"
+                                "value": "${task.id}"
                               },
                               "agent_id": {
                                 "value": "${scheduler.lastOfferAgentId}"
@@ -101,6 +100,54 @@ class Mesos {
                 }
                 """.getBytes())
 
+        sendToStream(requestBody)
+    }
+
+    void kill(Scheduler scheduler, Task task) {
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse('application/json'),
+                """
+                {
+                  "framework_id": {
+                    "value": "${scheduler.frameworkId}"
+                  },
+                  "type": "KILL",
+                  "kill": {
+                    "task_id": {
+                      "value": "${task.id}"
+                    }
+                  }
+                }
+                """.getBytes())
+
+        sendToStream(requestBody)
+    }
+
+    void acknowledge(Scheduler scheduler, Task task) {
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse('application/json'),
+                """
+                {
+                  "framework_id": {
+                    "value": "${scheduler.frameworkId}"
+                  },
+                  "type": "ACKNOWLEDGE",
+                  "acknowledge": {
+                    "agent_id": {
+                      "value": "${task.agentId}"
+                    },
+                    "task_id": {
+                      "value": "${task.id}"
+                    },
+                    "uuid": "${task.lastAckUuid}"
+                  }
+                }
+                """.getBytes())
+
+        sendToStream(requestBody)
+    }
+
+    private void sendToStream(RequestBody requestBody) {
         Request request = new Request.Builder()
                 .url(apiUrl)
                 .header('Mesos-Stream-Id', streamId)

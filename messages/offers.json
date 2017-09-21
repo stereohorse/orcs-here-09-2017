@@ -1,0 +1,82 @@
+{
+  "offers": {
+    "offers": [
+      {
+        "agent_id": {
+          "value": "31537d41-8efb-46fb-a65a-7bf7eebfb282-S0"
+        },
+        "allocation_info": {
+          "role": "*"
+        },
+        "framework_id": {
+          "value": "31537d41-8efb-46fb-a65a-7bf7eebfb282-0001"
+        },
+        "hostname": "agent-2500650235",
+        "id": {
+          "value": "31537d41-8efb-46fb-a65a-7bf7eebfb282-O1"
+        },
+        "resources": [
+          {
+            "allocation_info": {
+              "role": "*"
+            },
+            "name": "ports",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 31000,
+                  "end": 32000
+                }
+              ]
+            },
+            "role": "*",
+            "type": "RANGES"
+          },
+          {
+            "allocation_info": {
+              "role": "*"
+            },
+            "name": "cpus",
+            "role": "*",
+            "scalar": {
+              "value": 4
+            },
+            "type": "SCALAR"
+          },
+          {
+            "allocation_info": {
+              "role": "*"
+            },
+            "name": "mem",
+            "role": "*",
+            "scalar": {
+              "value": 1024
+            },
+            "type": "SCALAR"
+          },
+          {
+            "allocation_info": {
+              "role": "*"
+            },
+            "name": "disk",
+            "role": "*",
+            "scalar": {
+              "value": 2000
+            },
+            "type": "SCALAR"
+          }
+        ],
+        "url": {
+          "address": {
+            "hostname": "agent-2500650235",
+            "ip": "172.17.0.5",
+            "port": 5051
+          },
+          "path": "/slave(1)",
+          "scheme": "http"
+        }
+      }
+    ]
+  },
+  "type": "OFFERS"
+}

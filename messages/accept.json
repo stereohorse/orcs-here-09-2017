@@ -1,0 +1,66 @@
+{
+  "framework_id": {
+    "value": "70e50f75-42f0-4002-b29f-dbe7f19c2cc6-0005"
+  },
+  "type": "ACCEPT",
+  "accept": {
+    "offer_ids": [
+      {
+        "value": "70e50f75-42f0-4002-b29f-dbe7f19c2cc6-O5"
+      }
+    ],
+    "operations": [
+      {
+        "type": "LAUNCH",
+        "launch": {
+          "task_infos": [
+            {
+              "name": "My Task",
+              "task_id": {
+                "value": "12220-3440-12532-my-task2"
+              },
+              "agent_id": {
+                "value": "70e50f75-42f0-4002-b29f-dbe7f19c2cc6-S0"
+              },
+              "command": {
+                "shell": false
+              },
+              "container": {
+                "type": "DOCKER",
+                "docker": {
+                  "image": "nginx"
+                }
+              },
+              "resources": [
+                {
+                  "name": "cpus",
+                  "type": "SCALAR",
+                  "scalar": {
+                    "value": 1
+                  }
+                },
+                {
+                  "name": "mem",
+                  "type": "SCALAR",
+                  "scalar": {
+                    "value": 128
+                  }
+                },
+                {
+                  "name": "ports",
+                  "type": "SCALAR",
+                  "scalar": {
+                    "value": 31000
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "filters": {
+      "refuse_seconds": 5
+    }
+  }
+}

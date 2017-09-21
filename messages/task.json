@@ -1,0 +1,6 @@
+{
+  "name": "test-task-1",
+  "dockerImage": "nginx",
+  "cpus": 1,
+  "memMb": 128
+}
