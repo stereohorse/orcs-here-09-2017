@@ -1,19 +1,15 @@
 minimesos {
     clusterName = "x0001"
     loggingLevel = "INFO"
-    mapAgentSandboxVolume = false
-    mapPortsToHost = false
     mesosVersion = "1.0.0"
     timeout = 60
 
     agent {
         imageName = "mesosphere/mesos-slave"
         imageTag = "1.3.1"
-        loggingLevel = "# INHERIT FROM CLUSTER"
         portNumber = 5051
 
         resources {
-
             cpu {
                 role = "*"
                 value = 4
@@ -41,7 +37,6 @@ minimesos {
         authenticate = false
         imageName = "mesosphere/mesos-master"
         imageTag = "1.3.1"
-        loggingLevel = "# INHERIT FROM CLUSTER"
     }
 
     zookeeper {
