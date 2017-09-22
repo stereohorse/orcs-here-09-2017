@@ -1,0 +1,9 @@
+{
+  "framework_id": {
+    "value": "70e50f75-42f0-4002-b29f-dbe7f19c2cc6-0002"
+  },
+  "type": "REVIVE",
+  "revive": {
+    "role": "*"
+  }
+}
