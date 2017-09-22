@@ -1,4 +1,4 @@
-package ru.stereohorse.mesos.framework
+package ru.stereohorse.mesos
 
 import org.apache.zookeeper.ZooKeeper
 

@@ -1,4 +1,4 @@
-package ru.stereohorse.mesos.framework
+package ru.stereohorse.mesos
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper

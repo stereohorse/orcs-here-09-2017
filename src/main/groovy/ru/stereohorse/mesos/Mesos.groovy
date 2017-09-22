@@ -1,4 +1,4 @@
-package ru.stereohorse.mesos.framework
+package ru.stereohorse.mesos
 
 import groovy.json.JsonSlurper
 import groovy.util.logging.Slf4j
