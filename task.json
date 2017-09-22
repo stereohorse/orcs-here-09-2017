@@ -1,0 +1,6 @@
+{
+  "name": "task-from-hell",
+  "dockerImage": "nginx",
+  "cpus": 1,
+  "memMb": 128
+}
